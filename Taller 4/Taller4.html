@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        
+    </head>
+    <body>
+        <div class="container" id="app">
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" v-model="titulo" class="form-control" id="titulo"  placeholder="Titulo">
+                </div>
+                <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" v-model="autor" class="form-control" id="autor" placeholder="Autor" >
+                </div>
+                <div class="form-gorup">
+                    <label for="cantidaddisponible">Cantidad Disponible</label>
+                    <input type="number" v-model="cantidaddisponible" class="form-control" id="cantidaddisponible" placeholder="Cantidad Disponible">
+                </div>
+                </br>   
+                <div class="col-md-3 offset-md-1">
+                    <input type="button" @click="CrearPersona()" value="Guardar" class="btn btn-success">
+                    <input type="button" @click="Modificar(cantidaddisponible)" value="Modificar" class="btn btn-success">
+                </div>
+                </br>
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <th>TITULO</th>
+                        <th>AUTOR</th>
+                        <th>CANTIDAD DISPONIBLE</th>
+                    </thead>
+
+                    <tr v-for="(persona, index) in personas">
+                        <td>
+                        {{ persona.titulo }}
+                        </td>
+                        <td>
+                            {{ persona.autor }}
+                        </td>
+                        <td>
+                            {{ persona.cantidaddisponible }}
+                        </td>
+                        <td><input type="button" value="Editar" @click=" CargarEdita(persona.cantidaddisponible,index)"> </td>
+                        
+                            
+                    </tr>
+                </table> 
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        var vm = new Vue ({
+        el:'#app',
+        data:{
+            personas :[],
+            titulo:null,
+            autor:null,
+            cantidaddisponible:null,
+            index:null,
+            edita:false
+
+
+        },
+        mounted(){
+
+            console.log("SE CARGO pAGINA CON VUE JS");
+            
+        },
+        methods:{
+            CrearPersona(){
+                this.personas.push({
+                    titulo: this.titulo,
+                    autor:this.autor,
+                    cantidaddisponible:this.cantidaddisponible
+
+                });
+                this.titulo='';
+                this.autor='';
+                this.cantidaddisponible='';
+
+            },
+            CargarEdita(cantidaddisponible,index)
+            {
+
+                alert(index);   
+                this.index = index;
+            this.edita=true;
+                this.cantidaddisponible=cantidaddisponible;
+            },
+            Modificar(cantidaddisponible){
+
+                this.personas[this.index].cantidaddisponible=cantidaddisponible;
+            }
+        
+
+        }
+        })
+    </script>
+</html>

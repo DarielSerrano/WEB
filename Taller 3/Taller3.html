@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Prueba de Bootstrap</title> 
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head> 
+<body> 
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <br>
+        <div class="p-1 mb-2  bg-secondary text-white"><b>Crear Solicitud</b></div>
+        <label for="control1"><b>Puerto</b></label>
+        <select class="form-control" id="control1" name="control1">
+          <option>Concepcion</option>
+        </select>
+        <form class="form-row">
+          <div class="col-md-6">  
+            <label for="fecha1"><b>Fecha Inicio</b></label> 
+            <input type="date" class="form-control" id="fecha1">
+          </div>
+          <div class="col-md-6"> 
+            <label for="fecha2"><b>Fecha Termino</b></label> 
+            <input type="date" class="form-control" id="fecha2">
+          </div>
+        </form>
+        <label for="ingreso"><b>Tipo de ingreso</b></label>
+        <select class="form-control" id="control2" name="control2">
+          <option>Seleccione</option>
+        </select>
+        <label for="empresa"><b>Empresa</b></label>
+        <select class="form-control" id="control3" name="control3">
+          <option>No informada</option>
+        </select>
+        <br>
+      </div>
+      <div class="col-md-6">
+        <br>
+        <br>
+        <br>
+        <button type="submit" style="background-color: limegreen; height:70px;"  class="btn btn-default btn-block text-white">CREAR SOLICITUD</button>
+        <br>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-6" style="background-color:#FFFF">
+        <div class="p-1 mb-2 bg-secondary text-white"><b>Personal</b></div>
+        <form class="form-row">
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="rut1" name="rut">
+          </div>
+          <br>
+          <div class="col-md-2">
+            <button type="submit" style="background-color: steelblue;" class="btn btn-default text-white"><b>Buscar</b></button>
+          </div>
+        </form>
+        <br>
+        <form class="form-row">
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="numeracion" name="pasaporte">
+          </div>
+          <br>
+          <div class="col-md-2">
+            <button type="submit" style="background-color: steelblue;" class="btn btn-default text-white"><b>Buscar</b></button>
+           </div>
+        </form>
+        <br>
+        <form class="form-row">
+           <div class="col-md-6">
+             <button type="submit" style="background-color: steelblue;" class="btn btn-default btn-block text-white"><b>Locacion</b></button>
+           </div>
+        </form>
+         <br>
+        <form class="form-row">
+           <div class="col-md-6">
+             <button type="submit" style="background-color: steelblue;" class="btn btn-default btn-block text-white"><b>Nave</b></button>
+           </div>
+        </form>
+      </div>
+      <br>
+      <br>
+      <div class="col-lg-6" style="background-color:#FFFF">
+        <div class="p-1 mb-2 bg-secondary text-white"><b>En solicitud</b></div>
+        <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID</th>
+              <th scope="col">RUT</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">LOCACION</th>
+              <th scope="col">NAVE</th>
+              <th scope="col">QUITAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2</th>
+              <td>36</td>
+              <td>66.666.666-6</td>
+              <td>Mirio</td>
+              <td>Japon</td>
+              <td>Lemillion</td>
+              <td>2</td>
+            </tr>
+            <tr class="table-info">
+              <th scope="row">3</th>
+              <td>73</td>
+              <td>77.777.777-7</td>
+              <td>Midoria</td>
+              <td>Japon</td>
+              <td>One4All</td>
+              <td>3</td>
+            </tr>
+          </tbody>  
+        </table>
+      </div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="p-1 mb-2 bg-secondary text-white"><b>Vehiculos</b></div>
+        <form class="form-row">
+          <div class="col-md-10">
+            <input type="text" class="form-control" id="pat" name="patente">
+          </div>
+          <br>
+          <div class="col-md-2">
+            <button type="submit" style="background-color: steelblue;" class="btn btn-default text-white"><b>Buscar</b></button>
+          </div>
+        </form>
+      </div>
+      <br>
+      <div class="col-lg-6">
+        <div class="p-1 mb-2 bg-secondary text-white"><b>En solicitud</b></div>
+        <div class="table-responsive">
+          <table class="table table-sm table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">PATENTE</th>
+                <th scope="col">TIPO</th>
+                <th scope="col">QUITAR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-info">
+                <th scope="row">1</th>
+                <td>64</td>
+                <td>DX-DX-90</td>
+                <td>truck</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>90</td>
+                <td>XD-XD-69</td>
+                <td>Car</td>
+                <td>2</td>
+              </tr>
+            </tbody>  
+          </table>
+        </div>
+        <br>
+      
+      </div>
+    </div>
+
+  </div> 
+</body> 
+</html> 
